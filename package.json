@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "reset-db": "php artisan migrate:fresh --seed",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -16,5 +17,18 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "name": "demo-app-cypress-automation",
+    "version": "1.0.0",
+    "description": "Testing di repository ini dilakukan di 2 level yaitu :",
+    "main": "cypress.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "execa": "^9.5.2"
     }
 }
