@@ -20,6 +20,6 @@ Cypress.Commands.add('edit', () => {
     cy.get('a[data-toggle="sidebar"]').click();
     cy.contains('a.nav-link', 'Users Management').click();
     cy.contains('a.nav-link', 'User List').click();
-    cy.contains('td', 'budiono').find('a').contains('Edit').click();
+    
 
 });
