@@ -48,7 +48,7 @@ beforeEach(() =>{
 
     //fill form
     cy.get('[data-id="name"]', { timeout: 50000 })
-    .should('not.be.disabled') // pastikan tidak disabled dulu
+    .should('not.be.disabled') 
     .clear()
     .type('cindiana');
     
