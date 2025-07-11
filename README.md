@@ -1,25 +1,108 @@
-# basic_crud_cypress
+# Basic CRUD with Cypress E2E Testing
 
-This repository contains my Cypress project for basic CRUD automation.
+CRUD web application dengan Laravel dan testing otomatis menggunakan Cypress.
 
-## Testing
+## 🚀 Features
 
-Testing di repository ini dilakukan di 2 level yaitu:
+-   CRUD User (Create, Read, Update, Delete)
+-   Feature tests dengan PHPUnit
+-   E2E testing dengan Cypress
 
-1. Feature Test (PHPUnit)
-2. E2E Test (Cypress)
+## 📋 Requirements
 
-### Feature Test
+-   PHP 8.1+
+-   Composer
+-   Node.js & npm
+-   MySQL
 
-Cek file **`phpunit.xml`**: kita pakai custom .env bernama **`.env.testing`**. Tujuannya untuk memisahkan environment testing dan development.
+## 🛠️ Installation
 
-Database yang digunakan untuk project ini adalah MySQL, dengan dua database:
+### 1. Clone Repository
 
--   **l9** untuk development
--   **testing** untuk testing
+```bash
+git clone https://github.com/your-username/basic_crud_cypress.git
+cd basic_crud_cypress
+```
 
-Jalankan test dengan perintah:
+### 2. Install Dependencies
+
+```bash
+composer install
+npm install
+```
+
+### 3. Setup Environment
+
+```bash
+cp .env.example .env
+cp .env.example .env.testing
+```
+
+Edit `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=l9
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Edit `.env.testing`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=testing
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 4. Generate Key & Setup Database
+
+```bash
+php artisan key:generate
+```
+
+Buat database `l9` dan `testing` di MySQL, lalu:
+
+```bash
+php artisan migrate --seed
+php artisan migrate --env=testing
+```
+
+## ▶️ Running the App
+
+```bash
+php artisan serve
+```
+
+App berjalan di: http://127.0.0.1:8000
+
+## ✅ Running Tests
+
+### Laravel Tests
 
 ```bash
 php artisan test
 ```
+
+### Cypress Tests
+
+**Pastikan Laravel app sedang berjalan**, lalu:
+
+**Interactive mode:**
+
+```bash
+npx cypress open
+```
+
+**Headless mode:**
+
+```bash
+npx cypress run
+```
+
+Test files di: `/cypress/e2e/`
