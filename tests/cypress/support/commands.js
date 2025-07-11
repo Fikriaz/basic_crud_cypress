@@ -23,3 +23,10 @@ Cypress.Commands.add('edit', () => {
     
 
 });
+
+Cypress.Commands.add('user', () =>{
+  cy.get('[id="name"]').type('budi');
+    cy.get('[id="email"]').type('budi@gmail.com');
+    cy.get('[id="password"]').type('Asqweqwe');
+    cy.contains('Submit').click();
+})

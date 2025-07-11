@@ -4,14 +4,10 @@ describe('Validate delete user account', () => {
   }); 
 
   it('User can delete Account', () => {
-     cy.create();
-
+  
     //fill form
-    cy.get('[id="name"]').type('budi');
-    cy.get('[id="email"]').type('budi@gmail.com');
-    cy.get('[id="password"]').type('Asqweqwe');
-    cy.contains('Submit').click();
-    
+    cy.create();
+    cy.user();
     //Assert
     cy.get('p').should('be.visible');
     cy.get('p').contains('Data Berhasil Ditambahkan');
@@ -40,6 +36,11 @@ describe('Invalidate delete user account', () => {
   }); 
 
   it('User can cancle delete account', () => {
+    
+    //fill form
+    cy.create();
+    cy.user();
+    
     cy.contains('tr','budi').within(()=>{
       cy.get('[data-id=delete]').click()
     })
@@ -52,8 +53,6 @@ describe('Invalidate delete user account', () => {
     cy.get('.section-header')
     .should('be.visible')
     .contains('h1','User List')
-    
-
   })
 
 });
