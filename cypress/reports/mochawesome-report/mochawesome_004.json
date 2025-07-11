@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-11T19:33:06.677Z",
+    "end": "2025-07-11T19:35:43.539Z",
+    "duration": 156862,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bed6e1d3-dfef-4e7b-9f4e-f6dfec12f04c",
+      "title": "",
+      "fullFile": "tests\\cypress\\integration\\users\\EditUsers.cy.js",
+      "file": "tests\\cypress\\integration\\users\\EditUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e6dad99-745c-426b-b34d-f84f7fdf2463",
+          "title": "Valid edit account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can edit username",
+              "fullTitle": "Valid edit account User can edit username",
+              "timedOut": null,
+              "duration": 27612,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\EditUsers.cy.js\"\n}",
+              "code": "cy.contains('tr', 'user').within(() => {\n  cy.contains('Edit').click();\n});\ncy.get('[data-id=\"name\"]', {\n  timeout: 50000\n}).should('not.be.disabled') // pastikan tidak disabled dulu\n.clear().type('cindiana');\ncy.contains('button', 'Submit').click();\n//Assertion\ncy.get('p').should('be.visible');\ncy.get('p').contains('User Berhasil Diupdate');",
+              "err": {},
+              "uuid": "fe50e5f6-673f-4ae9-8514-0f988ce1aeb5",
+              "parentUUID": "2e6dad99-745c-426b-b34d-f84f7fdf2463",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User can edit email",
+              "fullTitle": "Valid edit account User can edit email",
+              "timedOut": null,
+              "duration": 25522,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\EditUsers.cy.js\"\n}",
+              "code": "cy.contains('tr', 'user').within(() => {\n  cy.contains('Edit').click();\n});\ncy.get('#email').clear().type('cindiana21@gmail.com');\ncy.contains('button', 'Submit').click();\n//Assertion\ncy.get('p').should('be.visible');\ncy.get('p').contains('User Berhasil Diupdate');",
+              "err": {},
+              "uuid": "eeb67540-46d1-47bd-953b-6603e2b0e253",
+              "parentUUID": "2e6dad99-745c-426b-b34d-f84f7fdf2463",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User can edit username & email",
+              "fullTitle": "Valid edit account User can edit username & email",
+              "timedOut": null,
+              "duration": 26396,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\EditUsers.cy.js\"\n}",
+              "code": "cy.contains('tr', 'user').within(() => {\n  cy.contains('Edit').click();\n});\n//fill form\ncy.get('[data-id=\"name\"]', {\n  timeout: 50000\n}).should('not.be.disabled').clear().type('cindiana');\ncy.get('#email').clear().type('cindiana21@gmail.com');\n//button submit\ncy.contains('button', 'Submit').click();\n//Assertion\ncy.get('p').should('be.visible');\ncy.get('p').contains('User Berhasil Diupdate');",
+              "err": {},
+              "uuid": "fc661104-e475-46ab-b822-8965c49e6130",
+              "parentUUID": "2e6dad99-745c-426b-b34d-f84f7fdf2463",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fe50e5f6-673f-4ae9-8514-0f988ce1aeb5",
+            "eeb67540-46d1-47bd-953b-6603e2b0e253",
+            "fc661104-e475-46ab-b822-8965c49e6130"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 79530,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "32be506a-813f-47c8-b0b8-d13ca48f2ebe",
+          "title": "Invalid Edit Account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User cannot edit with empty field username",
+              "fullTitle": "Invalid Edit Account User cannot edit with empty field username",
+              "timedOut": null,
+              "duration": 25668,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\EditUsers.cy.js\"\n}",
+              "code": "cy.contains('tr', 'user').within(() => {\n  cy.contains('Edit').click();\n});\ncy.get('[data-id=\"name\"]').clear();\ncy.get('#email').clear().type('cindiana21@gmail.com');\n//button submit\ncy.contains('button', 'Submit').click();\n//Assertion\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The name field is required.');",
+              "err": {},
+              "uuid": "487d6ad9-4570-45b8-95f7-785e5e1a7e5c",
+              "parentUUID": "32be506a-813f-47c8-b0b8-d13ca48f2ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cannot edit with empty field email",
+              "fullTitle": "Invalid Edit Account User cannot edit with empty field email",
+              "timedOut": null,
+              "duration": 25775,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\EditUsers.cy.js\"\n}",
+              "code": "cy.contains('tr', 'user').within(() => {\n  cy.contains('Edit').click();\n});\ncy.get('[data-id=\"name\"]').clear().type('cindiana');\ncy.get('#email').clear();\n//button submit\ncy.contains('button', 'Submit').click();\n//Assertion\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The email field is required.');",
+              "err": {},
+              "uuid": "f66400b2-8ef1-492b-b487-e1984f38eaae",
+              "parentUUID": "32be506a-813f-47c8-b0b8-d13ca48f2ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cannot edit with empty field username & email",
+              "fullTitle": "Invalid Edit Account User cannot edit with empty field username & email",
+              "timedOut": null,
+              "duration": 24902,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\EditUsers.cy.js\"\n}",
+              "code": "cy.contains('tr', 'user').within(() => {\n  cy.contains('Edit').click();\n});\ncy.get('[data-id=\"name\"]').clear();\ncy.get('#email').clear();\n//button submit\ncy.contains('button', 'Submit').click();\n//Assertion\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The name field is required.');\ncy.get('.invalid-feedback').contains('The email field is required.');",
+              "err": {},
+              "uuid": "ccb19424-9ffb-40fb-96f8-bf0dbdf342a4",
+              "parentUUID": "32be506a-813f-47c8-b0b8-d13ca48f2ebe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "487d6ad9-4570-45b8-95f7-785e5e1a7e5c",
+            "f66400b2-8ef1-492b-b487-e1984f38eaae",
+            "ccb19424-9ffb-40fb-96f8-bf0dbdf342a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 76345,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

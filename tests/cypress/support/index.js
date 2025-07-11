@@ -14,7 +14,7 @@
 // ***********************************************************
 
 /// <reference types="./" />
-
+import 'cypress-mochawesome-reporter/register';
 import './laravel-commands';
 import './laravel-routes';
 import './assertions';
