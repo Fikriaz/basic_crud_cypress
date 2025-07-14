@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-14T07:19:36.212Z",
+    "end": "2025-07-14T07:19:59.712Z",
+    "duration": 23500,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9e995814-d8ee-4e61-9287-3bb21e606325",
+      "title": "",
+      "fullFile": "tests\\cypress\\integration\\auth\\loginTestCase.cy.js",
+      "file": "tests\\cypress\\integration\\auth\\loginTestCase.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cabee3df-d522-41ff-bc9c-fc6734af1d13",
+          "title": "login test case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can login use valid email and password",
+              "fullTitle": "login test case User can login use valid email and password",
+              "timedOut": null,
+              "duration": 22794,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\auth\\\\loginTestCase.cy.js\"\n}",
+              "code": "cy.visit('http://localhost:8000');\ncy.exec('npm run reset-db', {\n  cwd: 'D:/ProjectQA/demo-app-cypress-automation',\n  shell: 'cmd.exe'\n});\ncy.get('[data-id=\"email\"]').type(\"superadmin@gmail.com\");\ncy.get('[data-id=\"password\"]').type(\"password\");\ncy.wait(1000); // Tunggu 1 detik\ncy.get('[data-id=\"submit\"]').click();",
+              "err": {},
+              "uuid": "b74798e6-7367-4938-b64d-09f2594a3b53",
+              "parentUUID": "cabee3df-d522-41ff-bc9c-fc6734af1d13",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b74798e6-7367-4938-b64d-09f2594a3b53"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22794,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

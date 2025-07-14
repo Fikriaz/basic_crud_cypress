@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-14T07:20:04.995Z",
+    "end": "2025-07-14T07:22:45.334Z",
+    "duration": 160339,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "35550120-eb1f-4d68-9474-4cfce426f387",
+      "title": "",
+      "fullFile": "tests\\cypress\\integration\\users\\CreateUsers.cy.js",
+      "file": "tests\\cypress\\integration\\users\\CreateUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4d3d7a7a-1129-49ce-a37d-8e051aab8408",
+          "title": "Valid create account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can Create new Account",
+              "fullTitle": "Valid create account User can Create new Account",
+              "timedOut": null,
+              "duration": 28164,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\CreateUsers.cy.js\"\n}",
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('budi');\ncy.get('[id=\"email\"]').type('budi@gmail.com');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('p').should('be.visible');\ncy.get('p').contains('Data Berhasil Ditambahkan');",
+              "err": {},
+              "uuid": "d1316a43-dfd7-4e68-922f-63837dffeeb7",
+              "parentUUID": "4d3d7a7a-1129-49ce-a37d-8e051aab8408",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1316a43-dfd7-4e68-922f-63837dffeeb7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28164,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "33626660-4346-4c53-ac1c-9fc0a8ff39f8",
+          "title": "Invalid Create Account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "user cannot create account with multiple email",
+              "fullTitle": "Invalid Create Account user cannot create account with multiple email",
+              "timedOut": null,
+              "duration": 25065,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\CreateUsers.cy.js\"\n}",
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('user');\ncy.get('[id=\"email\"]').type('user@gmail.com');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The email has already been taken.');",
+              "err": {},
+              "uuid": "d720f50f-8cac-40ae-8597-8b91e373f6f5",
+              "parentUUID": "33626660-4346-4c53-ac1c-9fc0a8ff39f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with field name blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with field name blank is empty",
+              "timedOut": null,
+              "duration": 25573,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\CreateUsers.cy.js\"\n}",
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"email\"]').type('user@gmail.com');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The name field is required.');",
+              "err": {},
+              "uuid": "8c00cc50-4e94-4493-8b54-4ea8e562000c",
+              "parentUUID": "33626660-4346-4c53-ac1c-9fc0a8ff39f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with field email blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with field email blank is empty",
+              "timedOut": null,
+              "duration": 27913,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\CreateUsers.cy.js\"\n}",
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('user');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The email field is required.');",
+              "err": {},
+              "uuid": "729728e3-a9b2-4927-b5b1-d0014f970d80",
+              "parentUUID": "33626660-4346-4c53-ac1c-9fc0a8ff39f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with field password blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with field password blank is empty",
+              "timedOut": null,
+              "duration": 28190,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\CreateUsers.cy.js\"\n}",
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('user');\ncy.get('[id=\"email\"]').type('user@gmail.com');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The password field is required.');",
+              "err": {},
+              "uuid": "e8814285-822a-4474-bca8-80b0642d7b8c",
+              "parentUUID": "33626660-4346-4c53-ac1c-9fc0a8ff39f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with all field blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with all field blank is empty",
+              "timedOut": null,
+              "duration": 23983,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\users\\\\CreateUsers.cy.js\"\n}",
+              "code": "cy.create();\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The name field is required.');\ncy.get('.invalid-feedback').contains('The email field is required.');\ncy.get('.invalid-feedback').contains('The password field is required.');",
+              "err": {},
+              "uuid": "c6a7ad17-f7e4-42d4-842f-7e3c8778f487",
+              "parentUUID": "33626660-4346-4c53-ac1c-9fc0a8ff39f8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d720f50f-8cac-40ae-8597-8b91e373f6f5",
+            "8c00cc50-4e94-4493-8b54-4ea8e562000c",
+            "729728e3-a9b2-4927-b5b1-d0014f970d80",
+            "e8814285-822a-4474-bca8-80b0642d7b8c",
+            "c6a7ad17-f7e4-42d4-842f-7e3c8778f487"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 130724,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-07-11T15:58:25.465Z",
-    "end": "2025-07-11T15:58:50.255Z",
-    "duration": 24790,
+    "start": "2025-07-13T12:41:18.847Z",
+    "end": "2025-07-13T12:41:45.011Z",
+    "duration": 26164,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,49 +18,49 @@
   },
   "results": [
     {
-      "uuid": "ef9506e1-1f70-4c2a-918a-94786f829248",
+      "uuid": "ced89c6d-882a-4c9e-aeac-1207265d9fb7",
       "title": "",
-      "fullFile": "tests\\cypress\\integration\\spec.cy.js",
-      "file": "tests\\cypress\\integration\\spec.cy.js",
+      "fullFile": "tests\\cypress\\integration\\auth\\loginTestCase.cy.js",
+      "file": "tests\\cypress\\integration\\auth\\loginTestCase.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "ea8a58ec-b561-4f00-9b94-eeceaa88ebd0",
-          "title": "template spec",
+          "uuid": "98c4fcb6-994a-46d6-911b-68309cd64929",
+          "title": "login test case",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "passes",
-              "fullTitle": "template spec passes",
+              "title": "User can login use valid email and password",
+              "fullTitle": "login test case User can login use valid email and password",
               "timedOut": null,
-              "duration": 2887,
+              "duration": 24272,
               "state": "passed",
-              "speed": "fast",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
-              "context": null,
-              "code": "cy.visit('https://example.cypress.io');",
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"tests\\\\cypress\\\\integration\\\\auth\\\\loginTestCase.cy.js\"\n}",
+              "code": "cy.visit('http://localhost:8000');\ncy.exec('npm run reset-db', {\n  cwd: 'D:/ProjectQA/demo-app-cypress-automation',\n  shell: 'cmd.exe'\n});\ncy.get('[data-id=\"email\"]').type(\"superadmin@gmail.com\");\ncy.get('[data-id=\"password\"]').type(\"password\");\ncy.wait(1000); // Tunggu 1 detik\ncy.get('[data-id=\"submit\"]').click();",
               "err": {},
-              "uuid": "6a4d7ac7-1e94-4539-bac9-54dfc3e7f016",
-              "parentUUID": "ea8a58ec-b561-4f00-9b94-eeceaa88ebd0",
+              "uuid": "3cb34ad2-346b-4b45-bef7-dc2d0be8be80",
+              "parentUUID": "98c4fcb6-994a-46d6-911b-68309cd64929",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6a4d7ac7-1e94-4539-bac9-54dfc3e7f016"
+            "3cb34ad2-346b-4b45-bef7-dc2d0be8be80"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2887,
+          "duration": 24272,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,10 +94,11 @@
     },
     "marge": {
       "options": {
-        "reportDir": "tests/cypress/reports",
+        "charts": true,
         "overwrite": false,
         "html": false,
-        "json": true
+        "json": true,
+        "reportDir": "cypress/reports/mochawesome-report"
       },
       "version": "6.2.0"
     }
