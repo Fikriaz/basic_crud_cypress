@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-07-14T08:46:58.102Z",
-    "end": "2025-07-14T08:47:08.173Z",
-    "duration": 10071,
+    "start": "2025-07-14T08:50:31.852Z",
+    "end": "2025-07-14T08:50:39.491Z",
+    "duration": 7639,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "782fd2e5-719a-4828-a8e4-514e7749789b",
+      "uuid": "6d20c004-4f95-4bd7-a60b-6b7e592958e5",
       "title": "",
       "fullFile": "tests\\cypress\\integration\\spec.cy.js",
       "file": "tests\\cypress\\integration\\spec.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7971c9fd-953c-4f63-83af-80ae8a0eda54",
+          "uuid": "5eedb2c3-23bb-40fe-ace0-e2839368e9d1",
           "title": "template spec",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "passes",
               "fullTitle": "template spec passes",
               "timedOut": null,
-              "duration": 4069,
+              "duration": 3430,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('https://example.cypress.io');",
               "err": {},
-              "uuid": "97ff4d9c-617f-48b3-9b8f-4236e491eac5",
-              "parentUUID": "7971c9fd-953c-4f63-83af-80ae8a0eda54",
+              "uuid": "afa2a2a7-882e-4796-8246-7dcf6151c9af",
+              "parentUUID": "5eedb2c3-23bb-40fe-ace0-e2839368e9d1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "97ff4d9c-617f-48b3-9b8f-4236e491eac5"
+            "afa2a2a7-882e-4796-8246-7dcf6151c9af"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4069,
+          "duration": 3430,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

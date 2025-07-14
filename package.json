@@ -14,7 +14,7 @@
         "clean:report-json": "if exist tests\\cypress\\reports\\report.json del tests\\cypress\\reports\\report.json",
         "clean:invalid-files": "if exist tests\\cypress\\reports\\loginTestCase.js del tests\\cypress\\reports\\loginTestCase.js",
         "check:json": "node check-json.js",
-        "report:merge": "npm run clean:report-json && npm run clean:invalid-files && mochawesome-merge tests/cypress/reports/CreateUsers.json tests/cypress/reports/DeleteUsers.json tests/cypress/reports/EditUsers.json tests/cypress/reports/mochawesome.json tests/cypress/reports/spec.json -o tests/cypress/reports/report.json",
+        "report:merge": "npm run clean:report-json && mochawesome-merge tests/cypress/reports/*.json -o tests/cypress/reports/report.json",
         "report:generate": "marge tests/cypress/reports/report.json --reportDir tests/cypress/reports --inline --charts",
         "cy:run:report": "npm run clean:reports && npm run cy:run && npm run report:merge && npm run report:generate",
         "pretest": "npm run clean:reports"

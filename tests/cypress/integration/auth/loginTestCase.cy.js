@@ -70,6 +70,8 @@ describe('Invalid login user', () => {
     cy.get('.invalid-feedback')
       .should('be.visible')
       .contains("The email field is required.")
+     cy.get('.invalid-feedback')
+      .should('be.visible')
       .contains("The password field is required.")
   });
 
@@ -87,11 +89,11 @@ describe('Invalid login user', () => {
   it("Cannot login with only password filled", () => {
     cy.get('[data-id="password"]').type("password");
     cy.get('[data-id="submit"]').click();
-    
+
       //assertion
     cy.get('.invalid-feedback')
       .should('be.visible')
-      .contains("The password field is required.")
+      .contains("The email field is required.")
   });
 
 });

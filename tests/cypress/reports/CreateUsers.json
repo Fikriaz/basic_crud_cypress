@@ -1,0 +1,222 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-14T08:51:47.954Z",
+    "end": "2025-07-14T08:54:22.594Z",
+    "duration": 154640,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2225563c-604f-4ac1-b5c5-899b18ffa1c0",
+      "title": "",
+      "fullFile": "tests\\cypress\\integration\\users\\CreateUsers.cy.js",
+      "file": "tests\\cypress\\integration\\users\\CreateUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "40af2ee2-f86a-4050-8d13-f252802fd4ca",
+          "title": "Valid create account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can Create new Account",
+              "fullTitle": "Valid create account User can Create new Account",
+              "timedOut": null,
+              "duration": 29189,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('budi');\ncy.get('[id=\"email\"]').type('budi@gmail.com');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('p').should('be.visible');\ncy.get('p').contains('Data Berhasil Ditambahkan');",
+              "err": {},
+              "uuid": "a66ad7fa-b686-4399-afdc-b6c13e1b8c2f",
+              "parentUUID": "40af2ee2-f86a-4050-8d13-f252802fd4ca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a66ad7fa-b686-4399-afdc-b6c13e1b8c2f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29189,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2f7c6c40-6171-41e6-8b4b-d2bf593e20ba",
+          "title": "Invalid Create Account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "user cannot create account with multiple email",
+              "fullTitle": "Invalid Create Account user cannot create account with multiple email",
+              "timedOut": null,
+              "duration": 24037,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('user');\ncy.get('[id=\"email\"]').type('user@gmail.com');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The email has already been taken.');",
+              "err": {},
+              "uuid": "4b6db48a-4abd-4688-ac80-5ca284e4b114",
+              "parentUUID": "2f7c6c40-6171-41e6-8b4b-d2bf593e20ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with field name blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with field name blank is empty",
+              "timedOut": null,
+              "duration": 24012,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"email\"]').type('user@gmail.com');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The name field is required.');",
+              "err": {},
+              "uuid": "9fc6fe33-919e-4a4d-8480-b86d7670c9a9",
+              "parentUUID": "2f7c6c40-6171-41e6-8b4b-d2bf593e20ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with field email blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with field email blank is empty",
+              "timedOut": null,
+              "duration": 27125,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('user');\ncy.get('[id=\"password\"]').type('Asqweqwe');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The email field is required.');",
+              "err": {},
+              "uuid": "9ac09837-ad20-426d-b4ac-2547666d2d9c",
+              "parentUUID": "2f7c6c40-6171-41e6-8b4b-d2bf593e20ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with field password blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with field password blank is empty",
+              "timedOut": null,
+              "duration": 25941,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.create();\n//fill form\ncy.get('[id=\"name\"]').type('user');\ncy.get('[id=\"email\"]').type('user@gmail.com');\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The password field is required.');",
+              "err": {},
+              "uuid": "488b2466-579f-4ed0-92d5-bc66ec5e9d44",
+              "parentUUID": "2f7c6c40-6171-41e6-8b4b-d2bf593e20ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create account with all field blank is empty",
+              "fullTitle": "Invalid Create Account user cannot create account with all field blank is empty",
+              "timedOut": null,
+              "duration": 23532,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.create();\ncy.contains('Submit').click();\n//Assert\ncy.get('.invalid-feedback').should('be.visible');\ncy.get('.invalid-feedback').contains('The name field is required.');\ncy.get('.invalid-feedback').contains('The email field is required.');\ncy.get('.invalid-feedback').contains('The password field is required.');",
+              "err": {},
+              "uuid": "0915fa9a-e304-48b8-84f5-9ad0247294cf",
+              "parentUUID": "2f7c6c40-6171-41e6-8b4b-d2bf593e20ba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4b6db48a-4abd-4688-ac80-5ca284e4b114",
+            "9fc6fe33-919e-4a4d-8480-b86d7670c9a9",
+            "9ac09837-ad20-426d-b4ac-2547666d2d9c",
+            "488b2466-579f-4ed0-92d5-bc66ec5e9d44",
+            "0915fa9a-e304-48b8-84f5-9ad0247294cf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 124647,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "tests/cypress/reports",
+        "reportFilename": "[name].html"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

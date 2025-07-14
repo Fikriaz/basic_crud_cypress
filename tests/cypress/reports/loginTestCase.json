@@ -1,0 +1,241 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-14T08:50:41.300Z",
+    "end": "2025-07-14T08:51:46.137Z",
+    "duration": 64837,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "25470011-f526-4a2a-928e-cfa28d5c5491",
+      "title": "",
+      "fullFile": "tests\\cypress\\integration\\auth\\loginTestCase.cy.js",
+      "file": "tests\\cypress\\integration\\auth\\loginTestCase.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e9b3e7ab-d8aa-4c2f-a614-9707ca43c059",
+          "title": "Validate login user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can login use valid email and password",
+              "fullTitle": "Validate login user User can login use valid email and password",
+              "timedOut": null,
+              "duration": 16532,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:8000');\ncy.exec('npm run reset-db', {\n  cwd: 'D:/ProjectQA/demo-app-cypress-automation',\n  shell: 'cmd.exe'\n});\ncy.get('[data-id=\"email\"]').type(\"superadmin@gmail.com\");\ncy.get('[data-id=\"password\"]').type(\"password\");\ncy.wait(1000); // Tunggu 1 detik\ncy.get('[data-id=\"submit\"]').click();",
+              "err": {},
+              "uuid": "3ceec1c7-68e6-4296-806c-2a094689962b",
+              "parentUUID": "e9b3e7ab-d8aa-4c2f-a614-9707ca43c059",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3ceec1c7-68e6-4296-806c-2a094689962b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16532,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+          "title": "Invalid login user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cannot login with wrong email and password",
+              "fullTitle": "Invalid login user Cannot login with wrong email and password",
+              "timedOut": null,
+              "duration": 9211,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-id=\"email\"]').type(\"wronguser@gmail.com\");\ncy.get('[data-id=\"password\"]').type(\"wrongpassword\");\ncy.get('[data-id=\"submit\"]').click();\n//assertion\ncy.get('.invalid-feedback').should('be.visible').contains(\"These credentials do not match our records.\");",
+              "err": {},
+              "uuid": "012f237f-06e2-4f45-9a7b-8b25197196c0",
+              "parentUUID": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot login with valid email but wrong password",
+              "fullTitle": "Invalid login user Cannot login with valid email but wrong password",
+              "timedOut": null,
+              "duration": 9313,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-id=\"email\"]').type(\"superadmin@gmail.com\");\ncy.get('[data-id=\"password\"]').type(\"wrongpassword\");\ncy.get('[data-id=\"submit\"]').click();\n//assertion\ncy.get('.invalid-feedback').should('be.visible').contains(\"These credentials do not match our records.\");",
+              "err": {},
+              "uuid": "821976a1-11c1-4f42-8b57-d6714401cd21",
+              "parentUUID": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot login with wrong email but valid password",
+              "fullTitle": "Invalid login user Cannot login with wrong email but valid password",
+              "timedOut": null,
+              "duration": 9066,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-id=\"email\"]').type(\"wronguser@gmail.com\");\ncy.get('[data-id=\"password\"]').type(\"password\");\ncy.get('[data-id=\"submit\"]').click();\n//assertion\ncy.get('.invalid-feedback').should('be.visible').contains(\"These credentials do not match our records.\");",
+              "err": {},
+              "uuid": "b4afbdcd-850a-4615-a8d7-01cdede62b50",
+              "parentUUID": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot login with empty email and password",
+              "fullTitle": "Invalid login user Cannot login with empty email and password",
+              "timedOut": null,
+              "duration": 6399,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-id=\"submit\"]').click();\n//assertion\ncy.get('.invalid-feedback').should('be.visible').contains(\"The email field is required.\");\ncy.get('.invalid-feedback').should('be.visible').contains(\"The password field is required.\");",
+              "err": {},
+              "uuid": "c648a8e5-31cc-4be1-ae11-e9f153347f95",
+              "parentUUID": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot login with only email filled",
+              "fullTitle": "Invalid login user Cannot login with only email filled",
+              "timedOut": null,
+              "duration": 7012,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-id=\"email\"]').type(\"superadmin@gmail.com\");\ncy.get('[data-id=\"submit\"]').click();\n//assertion\ncy.get('.invalid-feedback').should('be.visible').contains(\"The password field is required.\");",
+              "err": {},
+              "uuid": "3e0fbb1d-6b10-40b0-90a6-b7b1b0059c74",
+              "parentUUID": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot login with only password filled",
+              "fullTitle": "Invalid login user Cannot login with only password filled",
+              "timedOut": null,
+              "duration": 6545,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-id=\"password\"]').type(\"password\");\ncy.get('[data-id=\"submit\"]').click();\n//assertion\ncy.get('.invalid-feedback').should('be.visible').contains(\"The email field is required.\");",
+              "err": {},
+              "uuid": "a27c5b9d-4e18-4dfe-92d3-5d769a5f8e16",
+              "parentUUID": "7d5a75fb-79b2-4ab4-9514-1fbd580e46b1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "012f237f-06e2-4f45-9a7b-8b25197196c0",
+            "821976a1-11c1-4f42-8b57-d6714401cd21",
+            "b4afbdcd-850a-4615-a8d7-01cdede62b50",
+            "c648a8e5-31cc-4be1-ae11-e9f153347f95",
+            "3e0fbb1d-6b10-40b0-90a6-b7b1b0059c74",
+            "a27c5b9d-4e18-4dfe-92d3-5d769a5f8e16"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 47546,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "tests/cypress/reports",
+        "reportFilename": "[name].html"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
